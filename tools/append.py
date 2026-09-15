@@ -10,7 +10,7 @@ def append(args):
         pass
 
     try:
-        with open(filename, "w") as file:
+        with open(filename, "a") as file:
             file.writelines([content])
     except:
         return "ERROR: Failed to open file for writing - you may lack needed permissions"
