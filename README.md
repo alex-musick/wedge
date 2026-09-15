@@ -15,7 +15,7 @@ Adjust settings.json to your match your setup and needs. Then, launch it, option
 
 ## Commands
 - ```/exit``` or ```/quit```: Close Wedge
-- ```/danger {0,1,2}``` or ```/safety {0,1,2}```: Change the danger level (see below)
+- ```/danger {0,1,2}``` or ```/safety {0,1,2}```: Change the safety mode (see below)
 - ```/compact```: Compact the current context window
 - ```/clear```: Clear the context window
 - ```/model {model-id}```: Change models without clearing context.
