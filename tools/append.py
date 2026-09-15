@@ -7,7 +7,7 @@ def append(args):
     except UnicodeDecodeError:
         return "ERROR: File is not in text format"
     except:
-        return "ERROR: Failed to open file - file may not exist or may not be accessible"
+        pass
 
     try:
         with open(filename, "w") as file:
