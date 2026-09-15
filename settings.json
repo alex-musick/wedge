@@ -1,0 +1,22 @@
+{
+    "base_url": "http://jackhammer-1:8080",
+    "default_model": "qwen3.6:35b-code-instruct",
+    "compact_thresholds": [
+        {
+            "type": "value",
+            "when": "below",
+            "size": 40000,
+            "threshold": 1000
+        },
+        {
+            "type": "value",
+            "when": "above",
+            "size": 100000,
+            "threshold": 2000
+        }
+    ],
+    "compact_default": {
+        "type": "percent",
+        "threshold": 5
+    }
+}
