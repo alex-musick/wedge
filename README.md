@@ -21,7 +21,7 @@ Adjust settings.json to your match your setup and needs. Then, launch it, option
 - ```/model {model-id}```: Change models without clearing context.
 
 ## Safety
-Wedge has three "danger levels:" 0, 1, and 2. The lower the number, the safer the harness.
+Wedge has three safety modes. 0, 1, and 2. The lower the number, the safer the harness.
 - 0: All destructive operations require approval. This is the default.
 - 1: The model can freely edit any files in the working directory. All other file edits are auto-denied. Shell commands still require approval. Use this mode to let the model freely work on a repo where you can revert the changes if something goes wrong.
 - 2: Everything is auto-approved. Basically "YOLO" mode. Use this in a sandbox/container.
