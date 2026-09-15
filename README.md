@@ -1,5 +1,8 @@
 # Wedge - Minimal, Local-first Coding Agent
 
+## Disclaimer
+This is a personal project. I can not make any guarantees of safety, fitness for purpose, stability, or support.
+
 ## How to use
 Configure llama-swap on your server.
 Adjust settings.json to your match your setup and needs. Then, launch it, optionally with your desired model ID:
