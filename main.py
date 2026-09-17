@@ -3,7 +3,7 @@ import sys
 from colorama import Fore, Back, Style # pyright: ignore[reportMissingModuleSource]
 import compact
 
-version = "1.0.0"
+version = "1.1.0"
 safety_mode = 0
 
 safety_descriptions = [
@@ -69,7 +69,11 @@ def main():
     while True:
         print(Fore.LIGHTBLUE_EX + f"Model: {ai.model_name} | Context: {ai.used_ctx} / {ai.total_ctx} | Auto-compact: {ai.settings.get_compact_threshold(ai.total_ctx)}" + Style.RESET_ALL)
         print(Fore.LIGHTBLUE_EX + f"Safety Mode {safety_descriptions[safety_mode]}" + Style.RESET_ALL)
-        user_input = input("> ").strip()
+        try:
+            user_input = input("> ").strip()
+        except KeyboardInterrupt:
+            print("Bye")
+            exit()
         print(Style.RESET_ALL)
         parse_input(user_input)
         print()

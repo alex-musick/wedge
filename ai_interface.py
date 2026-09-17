@@ -5,6 +5,7 @@ source_path = Path(__file__).resolve()
 source_dir = source_path.parent
 sys.path.insert(0, f"{source_dir}/tools")
 
+import httpx
 import tool
 import asyncio
 import threading
@@ -141,10 +142,14 @@ async def send_prompt(prompt, tool_call_id="", role_override=""):
     payload = build_payload()
     # print(payload)
     try:
-        response = requests.post(model_url, json=payload, headers=headers)
+        client = httpx.AsyncClient(timeout=None)
+        response = await client.post(model_url, json=payload, headers=headers)
+        # response = requests.post(model_url, json=payload, headers=headers)
     except requests.exceptions.ConnectionError:
         print(Fore.RED + "Connection Error" + Style.RESET_ALL)
         return -1
+    except asyncio.CancelledError:
+        raise
 
     if response.status_code == 200:
         data = response.json()
@@ -174,7 +179,12 @@ def enter_work_loop(prompt, safety_mode):
         compact.compact()
 
     model_response_future = asyncio.run_coroutine_threadsafe(send_prompt(prompt), loop)
-    model_response_raw = await_throb(model_response_future)
+    try:
+        model_response_raw = await_throb(model_response_future)
+    except KeyboardInterrupt:
+        model_response_future.cancel()
+        print()
+        return
 
     first_loop = True
     done = False

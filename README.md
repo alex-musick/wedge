@@ -12,6 +12,7 @@ Adjust settings.json to your match your setup and needs. Then, launch it, option
 ## Dependencies
 - Requests
 - Colorama
+- httpx
 
 ## Commands
 - ```/exit``` or ```/quit```: Close Wedge
