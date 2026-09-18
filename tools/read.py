@@ -1,9 +1,9 @@
 def read(args):
     filename = args["file"]
-    start = args["start"]
+    start = args["start"] - 1
     end = -1
     try:
-        end = args["end"]
+        end = args["end"] - 1
     except KeyError:
         pass
     

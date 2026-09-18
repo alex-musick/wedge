@@ -3,7 +3,7 @@ import sys
 from colorama import Fore, Back, Style # pyright: ignore[reportMissingModuleSource]
 import compact
 
-version = "1.1.0"
+version = "1.1.1"
 safety_mode = 0
 
 safety_descriptions = [

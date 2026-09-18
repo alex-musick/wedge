@@ -221,7 +221,12 @@ def enter_work_loop(prompt, safety_mode):
         else:
             tool_output = tool_safety_wrapper.safe_tool_call(message, safety_mode)
             model_response_future = asyncio.run_coroutine_threadsafe(send_prompt(tool_output, message["tool_calls"][0]["id"]), loop)
-            model_response_raw = await_throb(model_response_future)
+            try:
+                model_response_raw = await_throb(model_response_future)
+            except KeyboardInterrupt:
+                model_response_future.cancel()
+                print()
+                return
             continue
 
     return

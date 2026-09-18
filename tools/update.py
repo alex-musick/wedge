@@ -1,11 +1,11 @@
 def update(args):
     filename = args["file"]
-    start = args["start"]
+    start = args["start"] - 1
     content = args["content"]
 
     end = -1
     try:
-        end = args["end"]
+        end = args["end"] - 1
     except ValueError:
         pass
     
@@ -17,19 +17,20 @@ def update(args):
     except:
         return "ERROR: Failed to open file for reading - file may not exist or may be in a different directory"
 
-    if end != -1:
-        try:
-            for i in range(start, end, reversed=True):
-                data.pop(i)
-        except:
-            return "ERROR: Could not clear specified lines - end value is likely invalid"
-
     try:
         data[start] = content
         if start != len(data):
             data[start] += "\n"
     except:
         return "ERROR: Failed to update line - line number may not exist"
+
+    if end != -1:
+        try:
+            for _ in range(end - (start+1)):
+                data.pop(start+1)
+        except IndexError:
+            return "ERROR: Could not clear specified lines - end value is likely invalid"
+
 
     try:
         with open(filename, "w") as file:

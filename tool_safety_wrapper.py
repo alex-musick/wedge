@@ -107,7 +107,7 @@ def approve_shell(message):
         response = tools["shell"].call(message)
         return response
     else:
-        return "DENIED: User denied shell command, try doing something else."
+        return "DENIED: User denied shell command. Reconsider whether a shell command is absolutely, unambiguously necessary, then try doing something different."
 
 
 

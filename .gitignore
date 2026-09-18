@@ -221,3 +221,6 @@ __marimo__/
 
 # Mac index cache
 .DS_STORE
+
+#Test file
+testfile

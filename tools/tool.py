@@ -140,11 +140,11 @@ register_tool(tool(
         },
         "start": {
             "type": "integer",
-            "description": "The first line to read, 0-indexed, inclusive"
+            "description": "The first line to read, 1-indexed, inclusive"
         },
         "end": {
             "type": "integer",
-            "description": "The last line to read, 0-indexed, exclusive. If ommitted, read to the end of the file."
+            "description": "The last line to read, 1-indexed, exclusive. If ommitted, read to the end of the file."
         }
     },
     required = ["file", "start"],
@@ -155,7 +155,7 @@ register_tool(tool(
 
 register_tool(tool(
     name="shell",
-    description="Use this to execute a command ONLY if ABSOLUTELY NECESSARY. YOU MAY NOT USE THIS TOOL TO EDIT, READ, OR MANIPULATE FILES. THE ECHO, CAT, AND LS/DIR COMMANDS ARE FORBIDDEN AND WILL BE REJECTED.",
+    description="Use this to execute a command ONLY if ABSOLUTELY NECESSARY. YOU MUST NOT USE THIS TOOL TO EDIT, READ, OR MANIPULATE FILES. THE ECHO, CAT, AND LS/DIR COMMANDS ARE FORBIDDEN AND WILL BE REJECTED.",
     params={
         "command": {
             "type": "string",
@@ -177,11 +177,11 @@ register_tool(tool(
         },
         "start": {
             "type": "integer",
-            "description": "The first line to remove, 0-indexed, inclusive. Supplied content will be written to this line."
+            "description": "The first line to remove, 1-indexed, inclusive. Supplied content will be written to this line."
         },
         "end": {
             "type": "integer",
-            "description": "The final line to remove, 0-indexed, exclusive. If ommitted, only replace one line."
+            "description": "The final line to remove, 1-indexed, exclusive. If ommitted, only replace one line."
         },
         "content": {
             "type": "string",
