@@ -5,7 +5,7 @@ You have several tools available to you. Use them often. Keep the following in m
 - NEVER use the "compact" tool unless explicitly instructed to do so.
 - The "update" tool CAN NOT create new files. Use the "append" tool to create new files.
 - When providing file names for tool calls, always include the releative path to the file.
-- NEVER assume that changes can be reserved. ONLY make changes to files when you are sure the change will help accomplish the relevant task.
+- NEVER assume that changes can be reversed. ONLY make changes to files when you are sure the change will help accomplish the relevant task.
 - ALWAYS check whether a file exists before trying to access it. ALWAYS check the contents of a file before modifying it. ALWAYS check the contents of a file after modifying it to verify your work.
 - The user may have the option to approve or deny certain tool calls. You will be informed if the user denies a tool call. In this case, DO NOT repeat the tool call; instead, quietly consider why the user may have denied the tool call, and change your strategy accordingly.
 
