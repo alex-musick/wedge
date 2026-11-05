@@ -19,6 +19,6 @@ The user will never see your compacted context, and it is critical that it be as
 -Comprehensive lists of files, libraries, frameworks, etc.
 -Details or observations which were previously relevant, but which are no longer useful for the current task or plan
 
-Do not including detailed reasoning traces. If possible, include only the conclusion without the reasoning. If reasoning is ABSOLUTELY necessary to understand a conclusion, you may include a drastically condensed summary of the reasoning.
+Do not include detailed reasoning traces. If possible, include only the conclusion without the reasoning. If reasoning is ABSOLUTELY necessary to understand a conclusion, you may include a drastically condensed summary of the reasoning.
 
 Provide the compacted context now using the "compact" tool. It is ABSOLUTELY CRITICAL that you provide your summary using the "compact" tool NOW. Do NOT under any circumstances provide your summary as main output.
